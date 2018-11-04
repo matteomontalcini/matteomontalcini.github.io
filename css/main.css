@@ -11,10 +11,14 @@ body, html {
   }
 
   /* Custom */
+  body {
+    background-image: url("../img/sea.jpg");
+    overflow: hidden;
+  }
+  
   #wrapper {
     flex-direction: column;
-    background-image: url("../img/sea.jpg");
-    opacity: 0.85;
+    opacity: 0.95;
     background-size: cover;
     height: 100%;
     display: -webkit-flex;
@@ -22,12 +26,23 @@ body, html {
     min-height: 100%;
     justify-content: center;
     -moz-transition: opacity 1s ease-in-out;
-		-webkit-transition: opacity 1s ease-in-out;
-		-ms-transition: opacity 1s ease-in-out;
-		transition: opacity 1s ease-in-out;
+    -webkit-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
   }
 
-  #main {
+  body.is-preload #wrapper {
+    opacity: 0;
+  }
+
+  #wrapper div {
+    text-align: center;
+    width: 100%;
+    overflow-y: scroll;
+    padding-top: 5px;
+  }
+
+  .main-section {
     padding: 4.5em 3em 3em 3em ;
     background: #ffffff;
     border-radius: 4px;
@@ -37,9 +52,10 @@ body, html {
     position: relative;
     text-align: center;
     width: 23em;
+    margin: auto;
   }
 
-  #main .avatar img {
+  .main-section .avatar img {
     display: block;
     margin: 0 auto;
     border-radius: 100%;
@@ -47,7 +63,7 @@ body, html {
     max-height: 122px;
   }
 
-  #main .avatar:before {
+  .main-section .avatar:before {
     content: '';
     display: block;
     position: absolute;
@@ -59,7 +75,7 @@ body, html {
     background: #c8cccf;
   }
 
-  #main .avatar {
+  .main-section .avatar {
     position: relative;
     display: block;
     margin-bottom: 1.5em;
@@ -84,7 +100,7 @@ body, html {
 
   @media screen and (max-width: 390px) {
 
-    #main {
+    .main-section {
       width: 20em;
     }
 
@@ -101,7 +117,7 @@ body, html {
         min-width: 320px;
       }
 
-      #main {
+      .main-section {
         width: 18em;
       }
 
@@ -115,7 +131,11 @@ body, html {
 
   }
 
-  #footer {padding-top: 15px;}
+  #footer {
+      padding-top: 15px;
+      padding-bottom: 30px;
+      display: inline-block;
+    }
 
   #footer .copyright {
     margin: 0;
@@ -124,8 +144,4 @@ body, html {
     color: white;
     opacity: 0.8;
     background-color: black;
-  }
-
-  body.is-preload #wrapper {
-    opacity: 0;
   }
